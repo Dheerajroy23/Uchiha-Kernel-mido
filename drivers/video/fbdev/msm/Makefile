@@ -55,4 +55,7 @@ obj-$(CONFIG_FB_MSM_MDSS) += mdss_fb.o mdss_util.o
 obj-$(CONFIG_COMPAT) += mdss_compat_utils.o
 
 obj-$(CONFIG_FB_MSM_MDSS_KCAL_CTRL) += mdss_mdp_kcal_ctrl.o
+<<<<<<< HEAD
+>>>>>>> fde79a50a463... msm: mdss: kcal: Add KCAL support for post processing control [v2]
+=======
 >>>>>>> fde79a50a463... msm: mdss: kcal: Add KCAL support for post processing control [v2]
