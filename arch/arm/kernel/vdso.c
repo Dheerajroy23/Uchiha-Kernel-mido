@@ -179,13 +179,13 @@ static int __init vdso_init(void)
 	unsigned int text_pages;
 	int i;
 
-	if (memcmp(&vdso_start, "\177ELF", 4)) {
+	if (memcmp(vdso_start, "\177ELF", 4)) {
 		pr_err("VDSO is not a valid ELF object!\n");
 		return -ENOEXEC;
 	}
 
-	text_pages = (&vdso_end - &vdso_start) >> PAGE_SHIFT;
-	pr_debug("vdso: %i text pages at base %p\n", text_pages, &vdso_start);
+	text_pages = (vdso_end - vdso_start) >> PAGE_SHIFT;
+	pr_debug("vdso: %i text pages at base %p\n", text_pages, vdso_start);
 
 	/* Allocate the VDSO text pagelist */
 	vdso_text_pagelist = kcalloc(text_pages, sizeof(struct page *),
@@ -200,7 +200,7 @@ static int __init vdso_init(void)
 	for (i = 0; i < text_pages; i++) {
 		struct page *page;
 
-		page = virt_to_page(&vdso_start + i * PAGE_SIZE);
+		page = virt_to_page(vdso_start + i * PAGE_SIZE);
 		vdso_text_pagelist[i] = page;
 	}
 
@@ -211,7 +211,7 @@ static int __init vdso_init(void)
 
 	cntvct_ok = cntvct_functional();
 
-	patch_vdso(&vdso_start);
+	patch_vdso(vdso_start);
 
 	return 0;
 }
