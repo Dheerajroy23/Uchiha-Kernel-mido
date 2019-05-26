@@ -117,18 +117,6 @@ if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.modules)" == 1 ]; then
   mount -o ro,remount -t auto /vendor 2>/dev/null;
 fi;
 
-if [ "/vendor/etc/thermal-engine.conf" ]; then
-   ui_print " ";
-   ui_print "Pushing Thermal config...";
-   ui_print "By TheHitMan @ xda-developers";
-   mount -o rw,remount -t auto /system;
-   mount -o rw,remount -t auto /vendor 2>/dev/null;
-  $bb rm -rf /vendor/etc/thermal-engine.conf
-  $bb cp -rLf /tmp/anykernel/thermal-engine.conf /vendor/etc
-  $bb chmod 0644 /vendor/etc/thermal-engine.conf
-  $bb rm -rf /tmp/anykernel/thermal-engine.conf
-fi;
-
 debugging;
 
 if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.cleanup)" == 1 ]; then
