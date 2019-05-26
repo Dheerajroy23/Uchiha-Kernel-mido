@@ -17,6 +17,8 @@ obj-y += mddi_client_dummy.o
 obj-y += mddi_client_toshiba.o
 obj-y += mddi_client_nt35399.o
 endif
+<<<<<<< HEAD
+=======
 
 mdss-dsi-objs := mdss_dsi.o mdss_dsi_host.o mdss_dsi_cmd.o mdss_dsi_status.o
 mdss-dsi-objs += mdss_dsi_panel.o
@@ -53,3 +55,10 @@ obj-$(CONFIG_FB_MSM_MDSS) += mdss_fb.o mdss_util.o
 obj-$(CONFIG_COMPAT) += mdss_compat_utils.o
 
 obj-$(CONFIG_FB_MSM_MDSS_KCAL_CTRL) += mdss_mdp_kcal_ctrl.o
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> fde79a50a463... msm: mdss: kcal: Add KCAL support for post processing control [v2]
+=======
+>>>>>>> fde79a50a463... msm: mdss: kcal: Add KCAL support for post processing control [v2]
+=======
+>>>>>>> fde79a50a463... msm: mdss: kcal: Add KCAL support for post processing control [v2]
