@@ -75,7 +75,6 @@
 #include <linux/uprobes.h>
 #include <linux/aio.h>
 #include <linux/compiler.h>
-#include <linux/kcov.h>
 #include <linux/cpufreq.h>
 
 #include <asm/pgtable.h>
